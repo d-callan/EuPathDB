@@ -59,7 +59,8 @@ make_eupath_txdb <- function(entry = NULL, build_dir = "EuPathDB", eu_version = 
   ## Happily, making a granges from txdb is quite quick and easy in most cases.
 
   if (isTRUE(install)) {
-    final_granges_path <- move_final_package(granges_lst, type = "granges", build_dir = build_dir)
+    granges <- granges_lst$rda
+    final_granges_path <- move_final_package(granges, type = "granges", build_dir = build_dir)
   }
 
   chr_entries <- read.delim(file = input_gff, header = FALSE, sep = "")

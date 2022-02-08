@@ -47,10 +47,14 @@ To create a local package of a EuPathDB resource, and get information from it:
 library(EuPathDB)
 ## I pretty much always use Leishmania major strain friedlin as my example.
 lm_entry <- get_eupath_entry(species="Friedlin")
-lm_name <- sc_entry[["Species"]]
+lm_name <- lm_entry[["Species"]]
 lm_name
 orgdb_pkgname <- make_eupath_orgdb(lm_entry)
 txdb_pkgname <- make_eupath_txdb(lm_entry)
+
+## have confirmed up to here *seems* to be minimally functional. -Danielle
+
+
 bsgenome_pkgname <- make_eupath_bsgenome(lm_entry)
 organismdbi_pkgname <- make_eupath_organismdbi(lm_entry)
 
